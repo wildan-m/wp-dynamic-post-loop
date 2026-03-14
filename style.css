@@ -1,0 +1,281 @@
+/*
+ Theme Name:   Flavor Child - Team Dynamic
+ Description:  Child theme that converts a static team page into a dynamic Custom Post Type loop with pagination.
+ Template:     flavor
+ Version:      1.0.0
+ Text Domain:  flavor-child-team
+ License:      GPL-2.0-or-later
+*/
+
+/* =========================================================================
+   Team Archive Grid
+   ========================================================================= */
+
+.team-archive-wrap {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem 1.25rem;
+}
+
+.team-archive-header {
+	text-align: center;
+	margin-bottom: 2.5rem;
+}
+
+.team-archive-title {
+	font-size: 2rem;
+	font-weight: 700;
+	margin: 0 0 0.5rem;
+}
+
+.team-archive-description {
+	color: #555;
+	font-size: 1.05rem;
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+/* Card grid — three columns on desktop, two on tablet, one on mobile. */
+.team-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.75rem;
+}
+
+/* =========================================================================
+   Team Card
+   ========================================================================= */
+
+.team-card {
+	background: #fff;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+	transition: box-shadow 0.2s ease, transform 0.2s ease;
+	list-style: none; /* override article/li defaults */
+}
+
+.team-card:hover {
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+	transform: translateY(-3px);
+}
+
+.team-card__link {
+	display: block;
+	color: inherit;
+	text-decoration: none;
+}
+
+.team-card__image img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+}
+
+.team-card__image--placeholder {
+	aspect-ratio: 1 / 1;
+	background: #e9ecef;
+}
+
+.team-card__body {
+	padding: 1.25rem;
+}
+
+.team-card__name {
+	font-size: 1.15rem;
+	font-weight: 600;
+	margin: 0 0 0.25rem;
+}
+
+.team-card__role {
+	font-size: 0.9rem;
+	color: #0073aa;
+	margin: 0 0 0.6rem;
+	font-weight: 500;
+}
+
+.team-card__excerpt {
+	font-size: 0.875rem;
+	color: #666;
+	margin: 0;
+	line-height: 1.5;
+}
+
+/* =========================================================================
+   Pagination
+   ========================================================================= */
+
+.team-pagination {
+	margin-top: 2.5rem;
+	text-align: center;
+}
+
+.team-pagination ul {
+	display: inline-flex;
+	gap: 0.35rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.team-pagination li a,
+.team-pagination li span {
+	display: inline-block;
+	padding: 0.5rem 0.85rem;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 0.9rem;
+	color: #333;
+	text-decoration: none;
+	transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.team-pagination li a:hover,
+.team-pagination li a:focus {
+	background: #0073aa;
+	border-color: #0073aa;
+	color: #fff;
+}
+
+.team-pagination li .current {
+	background: #0073aa;
+	border-color: #0073aa;
+	color: #fff;
+	font-weight: 600;
+}
+
+/* =========================================================================
+   No Results
+   ========================================================================= */
+
+.team-no-results {
+	text-align: center;
+	padding: 4rem 1rem;
+}
+
+.team-no-results h2 {
+	font-size: 1.4rem;
+	margin-bottom: 0.5rem;
+}
+
+.team-no-results p {
+	color: #666;
+}
+
+/* =========================================================================
+   Single Team Member
+   ========================================================================= */
+
+.team-profile {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 2rem 1.25rem;
+}
+
+.team-profile__header-inner {
+	display: flex;
+	gap: 2rem;
+	align-items: flex-start;
+	margin-bottom: 2rem;
+}
+
+.team-profile__photo {
+	flex: 0 0 280px;
+}
+
+.team-profile__photo img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+.team-profile__intro {
+	flex: 1;
+}
+
+.team-profile__name {
+	font-size: 2rem;
+	font-weight: 700;
+	margin: 0 0 0.3rem;
+}
+
+.team-profile__role {
+	font-size: 1.1rem;
+	color: #0073aa;
+	font-weight: 500;
+	margin: 0 0 0.75rem;
+}
+
+.team-profile__tagline {
+	font-size: 1rem;
+	color: #555;
+	margin: 0;
+	line-height: 1.6;
+}
+
+.team-profile__content {
+	line-height: 1.7;
+	margin-bottom: 2rem;
+}
+
+.team-profile__footer {
+	border-top: 1px solid #eee;
+	padding-top: 1.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.team-profile__back {
+	font-weight: 500;
+	color: #0073aa;
+	text-decoration: none;
+}
+
+.team-profile__back:hover {
+	text-decoration: underline;
+}
+
+/* =========================================================================
+   Responsive Breakpoints
+   ========================================================================= */
+
+@media (max-width: 960px) {
+	.team-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.team-profile__photo {
+		flex: 0 0 220px;
+	}
+}
+
+@media (max-width: 600px) {
+	.team-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.team-profile__header-inner {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.team-profile__photo {
+		flex: none;
+		width: 200px;
+	}
+
+	.team-archive-title {
+		font-size: 1.6rem;
+	}
+
+	.team-profile__name {
+		font-size: 1.6rem;
+	}
+}
